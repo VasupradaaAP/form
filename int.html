@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Internship</title>
+
+<style>
+table,tr,td{
+background-color:lightblue;
+}
+h1{
+font-style:italic;
+}
+table{
+border-collapse:collapse;
+width:77%;
+border:3px solid;
+font-size:24px;
+}
+#name, #divi,#desi, #idno, #sname, #mob, #clg, #dept, #aadh
+{
+width:270px;
+height:21px;
+}
+#fds, #tds
+{
+width:110px;
+height:25px;
+}
+.buttons
+{
+border:3px solid;
+border-radius:12px;
+height:37px;
+width:200px;
+font-size:22px;
+cursor:pointer;
+border-color:darkgray;
+background-color:lightgray;
+}
+
+</style>
+</head>
+
+
+<body>
+<br><br><br>
+<center>
+<h1 style="font-size:37px">INTERNSHIP</h1>
+</center><br><br>
+
+<form id="userform">
+<table align="center" border="1px" cellpadding="20px">
+<tr>
+<td><center><label for="name">Parent name</label></center></td>
+<td><input type="text" id="name" name="name"></td>
+<td><center><label for="divi">Division</label></center></td>
+<td><input type="text" id="divi" name="divi"></td>
+</tr>
+
+<tr>
+<td><center><label for="desi">Designation</label></center></td>
+<td><input type="text"  id="desi" name="desi"></td>
+<td><center><label for="idno">ID number</label></center></td>
+<td><input type="number" id="idno" name="idno"></td>
+</tr>
+</table><br><br>
+
+<table align="center" border="1px" cellpadding="20px">
+<tr>
+<td><center><label for="sname">Student name</label><center></td>
+<td><input type="name" id="sname" name="sname"></td>
+<td><center><label for="mob">Mobile number</label></center></td>
+<td><input type="number" id="mob" name="mob"></td>
+</tr>
+
+
+<tr>
+<td><center><label for="clg">College name</label></center></td>
+<td><input type="name" id="clg" name="clg" placeholder=" Type college full name"></td>
+<td><center><label for="dept">Department</label><center></td>
+<td><input type="name" id="dept" name="dept"></td>
+</tr>
+
+
+<tr>
+<td><center><label for="aadh">Aadhar number</label></center></td>
+<td colspan=3><input type="number" id="aadh" name="aadh">
+</tr>
+
+<tr>
+<td><center><label for="resi">Residential address</label></center></td>
+<td colspan=3><textarea row="170px" cols="92px" id="resi" name="resi" placeholder=" Enter the correct address" required></textarea></td>
+</tr>
+
+<tr>
+    <td><center><label for="brow">Section</label></center></td>
+    <td COLSPAN=3>
+    <label for="brow"> <input list="brow" name="brow">
+    <datalist id="brow">
+    <option value="Computer">
+    <option value="Civil">
+    <option value="Electronics">
+    <option value="Electrical">
+    <option value="Mechanical">
+    </datalist>
+    </td>
+    
+    </tr>
+
+<tr>
+<td><center><label for="dur">Duration</label></center></td>
+<td>
+<label for="dur"><input list="browsers" name="dur" >
+<datalist id="browsers">
+<option value="1 week">
+<option value="2 weeks">
+<option value="3 weeks">
+<option value="4 weeks">
+
+</datalist>
+</td>
+<td colspan=2><center><label for="fds">From date&nbsp&nbsp</label><input type="date" id="fds" name="fds"></input>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp
+<label for="tds">To date&nbsp&nbsp</label><input type="date" id="tds" name="tds"></input></center></td>
+</tr>
+
+</table>
+
+
+<br><br>
+<center>
+<input type="button" value="SUBMIT" onclick="submitform()" class="buttons">
+</center>
+</form>
+
+
+<!--<script>
+        function submitform() {
+            const form = document.getElementById("userform");
+
+            // Check if any input field is empty
+            const inputs = form.querySelectorAll('input, select, textarea');
+            let allFieldsFilled = true;
+            for (const input of inputs) {
+                if (input.value.trim() === '') {
+                    allFieldsFilled = false;
+                    break;
+                }
+            }
+
+            if (allFieldsFilled) {
+                const formdata = new FormData(form);
+                const search = new URLSearchParams(formdata).toString();
+                window.location.href = "int_s.html?" + search;
+            } else {
+                alert("Please fill all the data.");
+            }
+        }
+    </script>-->
+
+
+    <script>
+        function isValidPhoneNumber(phoneNumber) {
+            return /^\d{10}$/.test(phoneNumber);
+        }
+
+        function isValidAadharNumber(aadharNumber) {
+            return /^\d{12}$/.test(aadharNumber);
+        }
+
+
+        function submitform() {
+            const form = document.getElementById("userform");
+
+            const inputs = form.querySelectorAll('input, select, textarea');
+            let allFieldsFilled = true;
+            for (const input of inputs) {
+                if (input.value.trim() === '') {
+                    allFieldsFilled = false;
+                    break;
+                }
+            }
+
+            if (allFieldsFilled) {
+                // Validate phone number
+                const phoneNumberInput = document.getElementById('mob');
+                const phoneNumber = phoneNumberInput.value.trim();
+                if (!isValidPhoneNumber(phoneNumber)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    phoneNumberInput.focus();
+                    return;
+                }
+
+                // Validate Aadhar number
+                const aadharNumberInput = document.getElementById('aadh');
+                const aadharNumber = aadharNumberInput.value.trim();
+                if (!isValidAadharNumber(aadharNumber)) {
+                    alert("Please enter a valid 12-digit Aadhar number.");
+                    aadharNumberInput.focus();
+                    return;
+                }
+
+                const formdata = new FormData(form);
+                const search = new URLSearchParams(formdata).toString();
+                window.location.href = "int_s.html?" + search;
+            } else {
+                alert("Please fill all the data.");
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

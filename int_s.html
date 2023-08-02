@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Internship form confirmation</title>
+
+<style>
+body{
+background-color:antiquewhite;
+}
+p{
+font-size:23px;
+text-align:justify;
+}
+h2{
+border: 3px solid lightgreen;
+background-color:green;
+height:29px;
+width:197px;
+padding:10px 0px;
+border-radius:6px;
+color:white;
+font-size:27px;
+}
+.buttons
+{
+border:3px solid;
+border-radius:12px;
+height:37px;
+width:170px;
+font-size:22px;
+cursor:pointer;
+border-color:darkgray;
+background-color:lightgray;
+}
+.buttons1
+{
+border:3px solid;
+border-radius:12px;
+height:37px;
+width:330px;
+font-size:22px;
+cursor:pointer;
+border-color:darkgray;
+background-color:lightgray;
+}
+</style>
+</head>
+
+
+<body>
+<br>
+<h2><i>&nbsp&nbsp&nbspParent details</i></h2>
+<p>&nbsp&nbsp&nbsp Parent name: &nbsp<span id="parent"></span></p>
+<p>&nbsp&nbsp&nbsp Division: &nbsp<span id="division"></span></p>
+<p>&nbsp&nbsp&nbsp Designation: &nbsp<span id="designation"></span></p>
+<p>&nbsp&nbsp&nbsp ID number: &nbsp<span id="idnumber"></span></p>
+<br>
+
+<h2><i>&nbsp&nbsp&nbspStudent details</i></h2>
+<p>&nbsp&nbsp&nbsp Student name: &nbsp<span id="student"></span></p>
+<p>&nbsp&nbsp&nbsp Mobile number: &nbsp<span id="mobile"></span></p>
+<p>&nbsp&nbsp&nbsp College name: &nbsp<span id="college"></span></p>
+<p>&nbsp&nbsp&nbsp Department: &nbsp<span id="department"></span></p>
+<p>&nbsp&nbsp&nbsp Aadhar number: &nbsp<span id="aadhar"></span></p>
+<p>&nbsp&nbsp&nbsp Residential address: &nbsp<span id="resident"></span></p>
+<p>&nbsp&nbsp&nbsp Duration: <span id="duration"></span></p>
+<p>&nbsp&nbsp&nbsp Section: <span id="section"></span></p>
+<p>&nbsp&nbsp&nbsp From date: <span id="fdate"></span></p>
+<p>&nbsp&nbsp&nbsp To date: <span id="tdate"></span></p>
+
+
+<script>
+const params=new URLSearchParams(window.location.search);
+
+document.getElementById("parent").innerText=params.get("name");
+document.getElementById("division").innerText=params.get("divi");
+document.getElementById("designation").innerText=params.get("desi");
+document.getElementById("idnumber").innerText=params.get("idno");
+document.getElementById("student").innerText=params.get("sname");
+document.getElementById("mobile").innerText=params.get("mob");
+document.getElementById("college").innerText=params.get("clg");
+document.getElementById("department").innerText=params.get("dept");
+document.getElementById("aadhar").innerText=params.get("aadh");
+document.getElementById("resident").innerText=params.get("resi");
+document.getElementById("duration").innerText=params.get("dur");
+document.getElementById("section").innerText=params.get("brow");
+document.getElementById("fdate").innerText=params.get("fds");
+document.getElementById("tdate").innerText=params.get("tds");
+
+
+</script>
+<br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button onclick="history.back()" class="buttons">EDIT</button>
+&nbsp&nbsp&nbsp
+<a href="file_2.html"><input type="button" value="CONFIRM SUBMISSION" class="buttons1"></a>
+<br><br><br><br>
+
+</body>
+</html>

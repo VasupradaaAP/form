@@ -1,0 +1,106 @@
+*{
+background-color:snow;
+}
+
+h1{
+font-size:52px;
+border:5px solid gray;
+border-radius:4px;
+padding:5px;
+background-color:lightgray;
+width:30%;
+color:black;
+}
+
+.A1
+{
+border:5px solid violet;
+background-color:darkviolet;
+border-radius:15px;
+height:37px;
+width:250px;
+text-align:center;
+font-size:30px;
+padding:18px 20px;
+transition: transform 0.2s ease-in-out;
+}
+.A1:hover{transform:scale(1.1);}
+
+.A2
+{
+border:5px solid violet;
+background-color:darkviolet;
+border-radius:15px;
+height:37px;
+width:160px;
+text-align:center;
+font-size:30px;
+padding:15px;
+transition: transform 0.2s ease-in-out;
+}
+.A2:hover{transform:scale(1.1);}
+
+.A3
+{
+border:5px solid violet;
+background-color:darkviolet;
+border-radius:15px;
+height:37px;
+width:160px;
+text-align:center;
+font-size:30px;
+padding:15px;
+transition: transform 0.2s ease-in-out;
+}
+.A3:hover{transform:scale(1.1);}
+
+td{
+padding:70px;
+}
+
+mark,p,i{
+background-color:lightyellow;
+}
+
+.box{
+width: 1100px;
+height: 216px;
+border: 5px solid black;
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+cursor: pointer;
+overflow: hidden;
+background-color:lightyellow;
+border-color:mediumaquamarine;
+}
+
+.box p{
+font-size:34px;
+}
+
+.det{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+font-size:26px;
+background-color: aquamarine;
+color: black;
+transform: translateX(100%);
+transition: transform 0.5s ease-in-out;
+}
+
+.box:hover .det{
+transform: translateY(0%);
+}
+
+
+
+
+
+
+
